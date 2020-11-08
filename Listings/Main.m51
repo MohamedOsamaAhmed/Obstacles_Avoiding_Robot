@@ -1,0 +1,613 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    11/08/2020  16:58:40  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\STARTUP.obj, .\Objects\Main.obj, .\Objects\Servo.obj, .\Objects\UltraSonic_Sensor.
+>> obj, .\Objects\Delays_Functions.obj, .\Objects\Motors.obj TO .\Objects\Main PRINT (.\Listings\Main.m51)
+
+
+MEMORY MODEL: SMALL WITH FLOATING POINT ARITHMETIC
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\STARTUP.obj (?C_STARTUP)
+  .\Objects\Main.obj (MAIN)
+  .\Objects\Servo.obj (SERVO)
+  .\Objects\UltraSonic_Sensor.obj (ULTRASONIC_SENSOR)
+  .\Objects\Delays_Functions.obj (DELAYS_FUNCTIONS)
+  .\Objects\Motors.obj (MOTORS)
+  C:\KEIL_V5\C51\LIB\C51FPS.LIB (?C?FPMUL)
+  C:\KEIL_V5\C51\LIB\C51FPS.LIB (?C?FPDIV)
+  C:\KEIL_V5\C51\LIB\C51FPS.LIB (?C?FCAST)
+  C:\KEIL_V5\C51\LIB\C51FPS.LIB (?C?CASTF)
+  C:\KEIL_V5\C51\LIB\C51FPS.LIB (POW)
+  C:\KEIL_V5\C51\LIB\C51FPS.LIB (?C?FPGETOPN)
+  C:\KEIL_V5\C51\LIB\C51FPS.LIB (?C?CHKFLOAT)
+  C:\KEIL_V5\C51\LIB\C51FPS.LIB (?C?FPADD)
+  C:\KEIL_V5\C51\LIB\C51FPS.LIB (?C?FPCMP)
+  C:\KEIL_V5\C51\LIB\C51FPS.LIB (?C?FPNEG)
+  C:\KEIL_V5\C51\LIB\C51FPS.LIB (EXP)
+  C:\KEIL_V5\C51\LIB\C51FPS.LIB (LOG)
+  C:\KEIL_V5\C51\LIB\C51FPS.LIB (?C?FPSERIES)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_INIT)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?IMUL)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?LNEG)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?LLDCODE)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?LLDCODE0)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?LLDIIDATA)
+
+
+LINK MAP OF MODULE:  .\Objects\Main (?C_STARTUP)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0007H     UNIT         ?DT?ULTRASONIC_SENSOR
+                    000FH     0011H                  *** GAP ***
+            BIT     0020H.0   0000H.1   UNIT         _BIT_GROUP_
+                    0020H.1   0000H.7                *** GAP ***
+            DATA    0021H     001AH     UNIT         _DATA_GROUP_
+            IDATA   003BH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     04AEH     UNIT         ?C?LIB_CODE
+            CODE    0CAEH     0135H     UNIT         ?PR?LOG?LOG
+            CODE    0DE3H     0117H     UNIT         ?PR?_POW?POW
+            CODE    0EFAH     00D3H     INBLOCK      ?PR?MAIN?MAIN
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  11/08/2020  16:58:40  PAGE 2
+
+
+            CODE    0FCDH     002CH     INBLOCK      ?PR?LOOKLEFT?SERVO
+            CODE    0FF9H     0007H     INBLOCK      ?PR?MOVEBACKWARD?MOTORS
+            CODE    1000H     00A4H     INBLOCK      ?PR?READPING?ULTRASONIC_SENSOR
+            CODE    10A4H     009AH     UNIT         ?PR?EXP?EXP
+            CODE    113EH     008CH     UNIT         ?C_C51STARTUP
+            CODE    11CAH     0025H     INBLOCK      ?PR?LOOKRIGHT?SERVO
+            CODE    11EFH     0021H     INBLOCK      ?PR?_DELAY_MS?DELAYS_FUNCTIONS
+            CODE    1210H     0010H     INBLOCK      ?PR?DELAY_US?DELAYS_FUNCTIONS
+            CODE    1220H     000EH     UNIT         ?C_INITSEG
+            CODE    122EH     000EH     INBLOCK      ?PR?_DELAY_MS_SERVO?DELAYS_FUNCTIONS
+            CODE    123CH     000EH     INBLOCK      ?PR?TURNRIGHT?MOTORS
+            CODE    124AH     000EH     INBLOCK      ?PR?TURNLEFT?MOTORS
+            CODE    1258H     000CH     INBLOCK      ?PR?SETSERVO_AT_ZEROANGLE?SERVO
+            CODE    1264H     000CH     INBLOCK      ?PR?SETSERVO_AT_90ANGLE?SERVO
+            CODE    1270H     000CH     INBLOCK      ?PR?SETSERVO_AT_NEG90ANGLE?SERVO
+            CODE    127CH     000BH     INBLOCK      ?PR?MOVEFORWARD?MOTORS
+            CODE    1287H     0008H     INBLOCK      ?PR?INIT_TIMER?MAIN
+            CODE    128FH     0008H     INBLOCK      ?PR?SEND_TRIGGER_PULSE?ULTRASONIC_SENSOR
+            CODE    1297H     0004H     INBLOCK      ?PR?MOVESTOP?MOTORS
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\Main (?C_STARTUP)
+
+
+SEGMENT                                             BIT_GROUP          DATA_GROUP 
+  +--> CALLED SEGMENT                            START    LENGTH     START    LENGTH
+------------------------------------------------------------------------------------
+?C_C51STARTUP                                    -----    -----      -----    -----
+  +--> ?PR?MAIN?MAIN
+  +--> ?C_INITSEG
+
+?PR?MAIN?MAIN                                    -----    -----      0021H    0004H
+  +--> ?PR?_DELAY_MS?DELAYS_FUNCTIONS
+  +--> ?PR?SETSERVO_AT_ZEROANGLE?SERVO
+  +--> ?PR?READPING?ULTRASONIC_SENSOR
+  +--> ?PR?INIT_TIMER?MAIN
+  +--> ?PR?MOVESTOP?MOTORS
+  +--> ?PR?MOVEBACKWARD?MOTORS
+  +--> ?PR?LOOKRIGHT?SERVO
+  +--> ?PR?LOOKLEFT?SERVO
+  +--> ?PR?TURNRIGHT?MOTORS
+  +--> ?PR?TURNLEFT?MOTORS
+  +--> ?PR?MOVEFORWARD?MOTORS
+
+?PR?_DELAY_MS?DELAYS_FUNCTIONS                   -----    -----      002DH    0004H
+
+?PR?SETSERVO_AT_ZEROANGLE?SERVO                  -----    -----      -----    -----
+  +--> ?PR?_DELAY_MS_SERVO?DELAYS_FUNCTIONS
+
+?PR?READPING?ULTRASONIC_SENSOR                   -----    -----      0027H    0006H
+  +--> ?PR?_DELAY_MS?DELAYS_FUNCTIONS
+  +--> ?PR?SEND_TRIGGER_PULSE?ULTRASONIC_SENSOR
+  +--> ?PR?_POW?POW
+
+?PR?SEND_TRIGGER_PULSE?ULTRASONIC_SENSOR         -----    -----      -----    -----
+  +--> ?PR?DELAY_US?DELAYS_FUNCTIONS
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  11/08/2020  16:58:40  PAGE 3
+
+
+
+?PR?_POW?POW                                     -----    -----      002DH    000AH
+  +--> ?PR?LOG?LOG
+  +--> ?PR?EXP?EXP
+
+?PR?LOG?LOG                                      0020H.0  0000H.1    0037H    0004H
+
+?PR?LOOKRIGHT?SERVO                              -----    -----      0025H    0002H
+  +--> ?PR?SETSERVO_AT_90ANGLE?SERVO
+  +--> ?PR?_DELAY_MS?DELAYS_FUNCTIONS
+  +--> ?PR?READPING?ULTRASONIC_SENSOR
+  +--> ?PR?SETSERVO_AT_ZEROANGLE?SERVO
+
+?PR?SETSERVO_AT_90ANGLE?SERVO                    -----    -----      -----    -----
+  +--> ?PR?_DELAY_MS_SERVO?DELAYS_FUNCTIONS
+
+?PR?LOOKLEFT?SERVO                               -----    -----      0025H    0002H
+  +--> ?PR?SETSERVO_AT_NEG90ANGLE?SERVO
+  +--> ?PR?_DELAY_MS?DELAYS_FUNCTIONS
+  +--> ?PR?READPING?ULTRASONIC_SENSOR
+  +--> ?PR?SETSERVO_AT_ZEROANGLE?SERVO
+
+?PR?SETSERVO_AT_NEG90ANGLE?SERVO                 -----    -----      -----    -----
+  +--> ?PR?_DELAY_MS_SERVO?DELAYS_FUNCTIONS
+
+?PR?TURNRIGHT?MOTORS                             -----    -----      -----    -----
+  +--> ?PR?_DELAY_MS?DELAYS_FUNCTIONS
+
+?PR?TURNLEFT?MOTORS                              -----    -----      -----    -----
+  +--> ?PR?_DELAY_MS?DELAYS_FUNCTIONS
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\Main (?C_STARTUP)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ?C_STARTUP
+  C:113EH         SEGMENT       ?C_C51STARTUP
+  I:003BH         SEGMENT       ?STACK
+  C:0000H         PUBLIC        ?C_STARTUP
+  D:00E0H         SYMBOL        ACC
+  D:00F0H         SYMBOL        B
+  D:0083H         SYMBOL        DPH
+  D:0082H         SYMBOL        DPL
+  N:0000H         SYMBOL        IBPSTACK
+  N:0100H         SYMBOL        IBPSTACKTOP
+  N:0080H         SYMBOL        IDATALEN
+  C:1141H         SYMBOL        IDATALOOP
+  N:0000H         SYMBOL        PBPSTACK
+  N:0100H         SYMBOL        PBPSTACKTOP
+  N:0000H         SYMBOL        PDATALEN
+  N:0000H         SYMBOL        PDATASTART
+  N:0000H         SYMBOL        PPAGE
+  N:0000H         SYMBOL        PPAGEENABLE
+  D:00A0H         SYMBOL        PPAGE_SFR
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  11/08/2020  16:58:40  PAGE 4
+
+
+  D:0081H         SYMBOL        SP
+  C:113EH         SYMBOL        STARTUP1
+  N:0000H         SYMBOL        XBPSTACK
+  N:0000H         SYMBOL        XBPSTACKTOP
+  N:0000H         SYMBOL        XDATALEN
+  N:0000H         SYMBOL        XDATASTART
+  C:0000H         LINE#         126
+  C:113EH         LINE#         133
+  C:1140H         LINE#         134
+  C:1141H         LINE#         135
+  C:1142H         LINE#         136
+  C:1144H         LINE#         185
+  C:1147H         LINE#         196
+  -------         ENDMOD        ?C_STARTUP
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  D:00A8H         PUBLIC        IE
+  D:00B8H         PUBLIC        IP
+  C:0EFAH         PUBLIC        main
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  D:0088H         PUBLIC        TCON
+  C:1287H         PUBLIC        init_timer
+  B:0088H.5       PUBLIC        TF0
+  B:0088H.4       PUBLIC        TR0
+  D:00C8H         PUBLIC        T2CON
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          INIT_TIMER
+  C:1287H         LINE#         21
+  C:1287H         LINE#         22
+  C:128AH         LINE#         23
+  C:128CH         LINE#         24
+  C:128EH         LINE#         25
+  -------         ENDPROC       INIT_TIMER
+  -------         PROC          MAIN
+  -------         DO            
+  D:0021H         SYMBOL        distanceRight
+  D:0023H         SYMBOL        distanceLeft
+  -------         ENDDO         
+  C:0EFAH         LINE#         30
+  C:0EFAH         LINE#         31
+  C:0EFAH         LINE#         34
+  C:0EFFH         LINE#         35
+  C:0F03H         LINE#         36
+  C:0F09H         LINE#         38
+  C:0F0CH         LINE#         40
+  C:0F13H         LINE#         41
+  C:0F1AH         LINE#         42
+  C:0F21H         LINE#         43
+  C:0F28H         LINE#         44
+  C:0F2FH         LINE#         45
+  C:0F36H         LINE#         46
+  C:0F3DH         LINE#         47
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  11/08/2020  16:58:40  PAGE 5
+
+
+  C:0F44H         LINE#         48
+  C:0F4BH         LINE#         53
+  C:0F4EH         LINE#         56
+  C:0F4EH         LINE#         57
+  C:0F4EH         LINE#         59
+  C:0F55H         LINE#         60
+  C:0F5CH         LINE#         63
+  C:0F69H         LINE#         64
+  C:0F69H         LINE#         67
+  C:0F6CH         LINE#         68
+  C:0F73H         LINE#         69
+  C:0F76H         LINE#         70
+  C:0F7DH         LINE#         71
+  C:0F80H         LINE#         72
+  C:0F87H         LINE#         74
+  C:0F8EH         LINE#         75
+  C:0F95H         LINE#         76
+  C:0F9CH         LINE#         77
+  C:0FA3H         LINE#         79
+  C:0FB4H         LINE#         80
+  C:0FB7H         LINE#         81
+  C:0FB7H         LINE#         82
+  C:0FB9H         LINE#         83
+  C:0FB9H         LINE#         84
+  C:0FBCH         LINE#         85
+  C:0FBFH         LINE#         86
+  C:0FBFH         LINE#         87
+  C:0FC1H         LINE#         88
+  C:0FC1H         LINE#         89
+  C:0FC4H         LINE#         90
+  C:0FC4H         LINE#         91
+  C:0FCBH         LINE#         94
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
+
+  -------         MODULE        SERVO
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  C:1258H         PUBLIC        setServo_at_ZeroAngle
+  D:00A8H         PUBLIC        IE
+  D:00B8H         PUBLIC        IP
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  C:11CAH         PUBLIC        lookRight
+  B:0090H.7       PUBLIC        Servo_pin
+  C:0FCDH         PUBLIC        lookLeft
+  C:1264H         PUBLIC        setServo_at_90Angle
+  D:00C8H         PUBLIC        T2CON
+  C:1270H         PUBLIC        setServo_at_Neg90Angle
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          LOOKLEFT
+  -------         DO            
+  D:0025H         SYMBOL        distance
+  -------         ENDDO         
+  C:0FCDH         LINE#         8
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  11/08/2020  16:58:40  PAGE 6
+
+
+  C:0FCDH         LINE#         9
+  C:0FD2H         LINE#         11
+  C:0FD5H         LINE#         12
+  C:0FDCH         LINE#         13
+  C:0FE3H         LINE#         14
+  C:0FEAH         LINE#         16
+  C:0FEDH         LINE#         17
+  C:0FF4H         LINE#         18
+  C:0FF8H         LINE#         20
+  -------         ENDPROC       LOOKLEFT
+  -------         PROC          LOOKRIGHT
+  -------         DO            
+  D:0025H         SYMBOL        distance
+  -------         ENDDO         
+  C:11CAH         LINE#         22
+  C:11CAH         LINE#         23
+  C:11CFH         LINE#         26
+  C:11D2H         LINE#         27
+  C:11D9H         LINE#         28
+  C:11E0H         LINE#         29
+  C:11E7H         LINE#         32
+  C:11EAH         LINE#         35
+  C:11EEH         LINE#         36
+  -------         ENDPROC       LOOKRIGHT
+  -------         PROC          SETSERVO_AT_ZEROANGLE
+  C:1258H         LINE#         39
+  C:1258H         LINE#         40
+  C:1258H         LINE#         41
+  C:125AH         LINE#         42
+  C:1261H         LINE#         43
+  C:1263H         LINE#         45
+  -------         ENDPROC       SETSERVO_AT_ZEROANGLE
+  -------         PROC          SETSERVO_AT_90ANGLE
+  C:1264H         LINE#         46
+  C:1264H         LINE#         47
+  C:1264H         LINE#         49
+  C:1266H         LINE#         50
+  C:126DH         LINE#         51
+  C:126FH         LINE#         53
+  -------         ENDPROC       SETSERVO_AT_90ANGLE
+  -------         PROC          SETSERVO_AT_NEG90ANGLE
+  C:1270H         LINE#         54
+  C:1270H         LINE#         55
+  C:1270H         LINE#         56
+  C:1272H         LINE#         57
+  C:1279H         LINE#         58
+  C:127BH         LINE#         59
+  -------         ENDPROC       SETSERVO_AT_NEG90ANGLE
+  -------         ENDMOD        SERVO
+
+  -------         MODULE        ULTRASONIC_SENSOR
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  B:0090H.1       PUBLIC        Trigger_pin
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  D:0008H         PUBLIC        goesForward
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  11/08/2020  16:58:40  PAGE 7
+
+
+  D:00A8H         PUBLIC        IE
+  C:128FH         PUBLIC        send_trigger_pulse
+  D:00B8H         PUBLIC        IP
+  B:00A0H.0       PUBLIC        Echo_pin
+  C:1000H         PUBLIC        readPing
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  B:0088H.5       PUBLIC        TF0
+  D:008CH         PUBLIC        TH0
+  D:008AH         PUBLIC        TL0
+  D:0009H         PUBLIC        distance
+  B:0088H.4       PUBLIC        TR0
+  D:000BH         PUBLIC        distance_measurement
+  D:00C8H         PUBLIC        T2CON
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          SEND_TRIGGER_PULSE
+  C:128FH         LINE#         9
+  C:128FH         LINE#         10
+  C:1291H         LINE#         11
+  C:1294H         LINE#         12
+  C:1296H         LINE#         13
+  -------         ENDPROC       SEND_TRIGGER_PULSE
+  -------         PROC          READPING
+  -------         DO            
+  D:0027H         SYMBOL        cm
+  D:0029H         SYMBOL        value
+  -------         ENDDO         
+  C:1000H         LINE#         15
+  C:1000H         LINE#         16
+  C:1005H         LINE#         18
+  C:100BH         LINE#         19
+  C:100EH         LINE#         20
+  C:1011H         LINE#         21
+  C:1011H         LINE#         23
+  C:1011H         LINE#         25
+  C:1013H         LINE#         27
+  C:1019H         LINE#         28
+  C:1019H         LINE#         30
+  C:1019H         LINE#         31
+  C:101BH         LINE#         34
+  C:1042H         LINE#         36
+  C:1054H         LINE#         37
+  C:1078H         LINE#         39
+  C:107FH         LINE#         40
+  C:1085H         LINE#         41
+  C:108AH         LINE#         42
+  C:108CH         LINE#         43
+  C:1099H         LINE#         44
+  C:109FH         LINE#         45
+  C:10A3H         LINE#         46
+  -------         ENDPROC       READPING
+  -------         ENDMOD        ULTRASONIC_SENSOR
+
+  -------         MODULE        DELAYS_FUNCTIONS
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00B0H         PUBLIC        P3
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  11/08/2020  16:58:40  PAGE 8
+
+
+  D:00A8H         PUBLIC        IE
+  D:00B8H         PUBLIC        IP
+  C:11EFH         PUBLIC        _Delay_ms
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  C:1210H         PUBLIC        Delay_us
+  C:122EH         PUBLIC        _Delay_ms_servo
+  B:0088H.5       PUBLIC        TF0
+  D:008CH         PUBLIC        TH0
+  D:008AH         PUBLIC        TL0
+  B:0088H.4       PUBLIC        TR0
+  D:00C8H         PUBLIC        T2CON
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          _DELAY_MS_SERVO
+  D:0006H         SYMBOL        us
+  C:122EH         LINE#         5
+  C:122EH         LINE#         6
+  C:122EH         LINE#         7
+  C:1238H         LINE#         8
+  C:1238H         LINE#         9
+  C:1239H         LINE#         10
+  C:123BH         LINE#         11
+  -------         ENDPROC       _DELAY_MS_SERVO
+  -------         PROC          _DELAY_MS
+  D:0006H         SYMBOL        ms
+  -------         DO            
+  D:002DH         SYMBOL        us
+  -------         ENDDO         
+  C:11EFH         LINE#         14
+  C:11EFH         LINE#         15
+  C:11EFH         LINE#         16
+  C:11FFH         LINE#         17
+  C:120CH         LINE#         18
+  C:120CH         LINE#         19
+  C:120DH         LINE#         20
+  C:120FH         LINE#         21
+  -------         ENDPROC       _DELAY_MS
+  -------         PROC          DELAY_US
+  C:1210H         LINE#         25
+  C:1210H         LINE#         26
+  C:1210H         LINE#         27
+  C:1213H         LINE#         28
+  C:1216H         LINE#         29
+  C:1218H         LINE#         30
+  C:121BH         LINE#         31
+  C:121DH         LINE#         32
+  C:121FH         LINE#         33
+  -------         ENDPROC       DELAY_US
+  -------         ENDMOD        DELAYS_FUNCTIONS
+
+  -------         MODULE        MOTORS
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  D:00A8H         PUBLIC        IE
+  C:127CH         PUBLIC        moveForward
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  11/08/2020  16:58:40  PAGE 9
+
+
+  D:00B8H         PUBLIC        IP
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  C:123CH         PUBLIC        turnRight
+  C:124AH         PUBLIC        turnLeft
+  C:0FF9H         PUBLIC        moveBackward
+  C:1297H         PUBLIC        moveStop
+  D:00C8H         PUBLIC        T2CON
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          MOVESTOP
+  C:1297H         LINE#         6
+  C:1297H         LINE#         7
+  C:129AH         LINE#         8
+  -------         ENDPROC       MOVESTOP
+  -------         PROC          MOVEFORWARD
+  C:127CH         LINE#         10
+  C:127CH         LINE#         11
+  C:1280H         LINE#         12
+  C:1280H         LINE#         13
+  C:1283H         LINE#         14
+  C:1286H         LINE#         15
+  C:1286H         LINE#         16
+  -------         ENDPROC       MOVEFORWARD
+  -------         PROC          MOVEBACKWARD
+  C:0FF9H         LINE#         17
+  C:0FF9H         LINE#         18
+  C:0FFCH         LINE#         19
+  C:0FFFH         LINE#         20
+  -------         ENDPROC       MOVEBACKWARD
+  -------         PROC          TURNRIGHT
+  C:123CH         LINE#         21
+  C:123CH         LINE#         22
+  C:123FH         LINE#         23
+  C:1246H         LINE#         24
+  C:1249H         LINE#         25
+  -------         ENDPROC       TURNRIGHT
+  -------         PROC          TURNLEFT
+  C:124AH         LINE#         26
+  C:124AH         LINE#         27
+  C:124DH         LINE#         28
+  C:1254H         LINE#         29
+  C:1257H         LINE#         30
+  -------         ENDPROC       TURNLEFT
+  -------         ENDMOD        MOTORS
+
+  -------         MODULE        ?C?FPMUL
+  C:0800H         PUBLIC        ?C?FPMUL
+  -------         ENDMOD        ?C?FPMUL
+
+  -------         MODULE        ?C?FPDIV
+  C:0909H         PUBLIC        ?C?FPDIV
+  -------         ENDMOD        ?C?FPDIV
+
+  -------         MODULE        ?C?FCAST
+  C:09B0H         PUBLIC        ?C?FCASTC
+  C:09ABH         PUBLIC        ?C?FCASTI
+  C:09A6H         PUBLIC        ?C?FCASTL
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  11/08/2020  16:58:40  PAGE 10
+
+
+  -------         ENDMOD        ?C?FCAST
+
+  -------         MODULE        ?C?CASTF
+  C:09E4H         PUBLIC        ?C?CASTF
+  -------         ENDMOD        ?C?CASTF
+
+  -------         MODULE        POW
+  D:002DH         PUBLIC        ?_pow?BYTE
+  C:0DE3H         PUBLIC        _pow
+  -------         ENDMOD        POW
+
+  -------         MODULE        ?C?CHKFLOAT
+  C:0A65H         PUBLIC        ?C?CHKFLOAT
+  -------         ENDMOD        ?C?CHKFLOAT
+
+  -------         MODULE        ?C?FPADD
+  C:0A86H         PUBLIC        ?C?FPADD
+  C:0A82H         PUBLIC        ?C?FPSUB
+  -------         ENDMOD        ?C?FPADD
+
+  -------         MODULE        ?C?FPCMP
+  C:0B79H         PUBLIC        ?C?FPCMP
+  C:0B77H         PUBLIC        ?C?FPCMP3
+  -------         ENDMOD        ?C?FPCMP
+
+  -------         MODULE        ?C?FPNEG
+  C:0BF0H         PUBLIC        ?C?FPNEG
+  -------         ENDMOD        ?C?FPNEG
+
+  -------         MODULE        EXP
+  C:10DCH         PUBLIC        _EXP
+  -------         ENDMOD        EXP
+
+  -------         MODULE        LOG
+  C:0CE2H         PUBLIC        _LOG
+  C:0CDEH         PUBLIC        _LOG10
+  -------         ENDMOD        LOG
+
+  -------         MODULE        ?C?IMUL
+  C:0C4EH         PUBLIC        ?C?IMUL
+  -------         ENDMOD        ?C?IMUL
+
+  -------         MODULE        ?C?LNEG
+  C:0C60H         PUBLIC        ?C?LNEG
+  -------         ENDMOD        ?C?LNEG
+
+  -------         MODULE        ?C?LLDCODE
+  C:0C6EH         PUBLIC        ?C?LLDCODE
+  -------         ENDMOD        ?C?LLDCODE
+
+  -------         MODULE        ?C?LLDCODE0
+  C:0C7EH         PUBLIC        ?C?LLDCODE0
+  -------         ENDMOD        ?C?LLDCODE0
+
+  -------         MODULE        ?C?LLDIIDATA
+  C:0C97H         PUBLIC        ?C?LLDIIDATA
+  C:0C8EH         PUBLIC        ?C?LLDIIDATA1
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  11/08/2020  16:58:40  PAGE 11
+
+
+  C:0C90H         PUBLIC        ?C?LLDIIDATA8
+  -------         ENDMOD        ?C?LLDIIDATA
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0289H BYTE (31%) *
+******************************************************************************
+
+Program Size: data=42.1 xdata=0 code=2718
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

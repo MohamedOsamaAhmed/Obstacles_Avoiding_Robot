@@ -1,0 +1,122 @@
+C51 COMPILER V9.60.0.0   MAIN                                                              11/08/2020 16:58:40 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\Objects\Main.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Main.c ROM(COMPACT) OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\
+                    -Listings\Main.lst) TABS(2) OBJECT(.\Objects\Main.obj)
+
+line level    source
+
+   1          #include <reg52.h>
+   2          #include <stdio.h>
+   3          #include <intrins.h>
+   4          #include <math.h>
+   5          #include "obstacles_avoiding_robot_cfg.h"
+   6          #include "Servo.h"
+   7          #include "UltraSonic_Sensor.h"
+   8          #include "Delays_Functions.h"
+   9          #include "Motors.h"
+  10          
+  11          
+  12          void init_timer(void);
+  13          
+  14          
+  15          
+  16          
+  17          
+  18          
+  19          
+  20          
+  21          void init_timer(){
+  22   1        TMOD=0x01;                    /*initialize Timer*/
+  23   1        TF0=0;
+  24   1        TR0 = 0;
+  25   1      }
+  26          
+  27          
+  28          
+  29          
+  30          void main()
+  31          {
+  32   1        
+  33   1        
+  34   1        int distanceRight = 0;
+  35   1        int distanceLeft = 0;
+  36   1        Delay_ms(50);  
+  37   1        
+  38   1        setServo_at_ZeroAngle();
+  39   1        
+  40   1        Delay_ms(2000);
+  41   1        distance = readPing();
+  42   1        Delay_ms(100);
+  43   1        distance = readPing();
+  44   1        Delay_ms(100);
+  45   1        distance = readPing();
+  46   1        Delay_ms(100);
+  47   1        distance = readPing();
+  48   1        Delay_ms(100);
+  49   1        
+  50   1      
+  51   1        
+  52   1        
+  53   1        init_timer();     /* Initialize Timer*/
+  54   1        
+C51 COMPILER V9.60.0.0   MAIN                                                              11/08/2020 16:58:40 PAGE 2   
+
+  55   1        
+  56   1        while (1)
+  57   1        {
+  58   2          
+  59   2            distance = readPing();
+  60   2          Delay_ms(100);
+  61   2          
+  62   2        
+  63   2        if (distance <= 20 )
+  64   2          {
+  65   3          
+  66   3          
+  67   3              moveStop();
+  68   3              Delay_ms(300);
+  69   3              moveBackward();
+  70   3              Delay_ms(400);
+  71   3              moveStop();
+  72   3              Delay_ms(300);
+  73   3              
+  74   3              distanceRight = lookRight();
+  75   3              Delay_ms(300);
+  76   3              distanceLeft = lookLeft();
+  77   3              Delay_ms(300);
+  78   3      
+  79   3             if (distance >= distanceLeft ){
+  80   4                turnRight();
+  81   4                moveStop();
+  82   4              }
+  83   3              else{
+  84   4                turnLeft();
+  85   4                moveStop();
+  86   4              }
+  87   3        }
+  88   2         else{
+  89   3          moveForward(); 
+  90   3        }
+  91   2         distance = readPing();
+  92   2        
+  93   2      
+  94   2        }
+  95   1      
+  96   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    219    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       4
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
